@@ -8,10 +8,13 @@ let tileLayer = new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png'
 });
 
 let map = new L.Map('map', { // wstępna konfiguracja mapy c.d.
-  'layers': [tileLayer]
+  'layers': [tileLayer],
+  zoomControl: false
 });
 
-map.set
+new L.Control.Zoom({ position: 'bottomright' }).addTo(map);
+
+
 
 let routeLayer = { // obiekt, który odpowiada za wszystkie operacje na warstwie szlaków 
   routesApiUrl: ROUTES_API_FULL_URL,
